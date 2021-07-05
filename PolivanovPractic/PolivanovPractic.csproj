@@ -127,6 +127,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageF\NotesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageF\NovostiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,6 +172,9 @@
     </Compile>
     <Compile Include="PageF\MyArticles.xaml.cs">
       <DependentUpon>MyArticles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageF\NotesPage.xaml.cs">
+      <DependentUpon>NotesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageF\NovostiPage.xaml.cs">
       <DependentUpon>NovostiPage.xaml</DependentUpon>
@@ -286,6 +293,9 @@
       <DependentUpon>PracticBD.edmx</DependentUpon>
       <LastGenOutput>PracticBD.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResF\lastick.png" />
+    <Resource Include="ResF\pen.png" />
+    <Resource Include="ResF\imgBackWhite.png" />
     <Resource Include="ResF\logout.png" />
     <Resource Include="ResF\imgBack.png" />
     <Resource Include="ResF\imgFeed.png" />

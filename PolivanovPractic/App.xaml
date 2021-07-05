@@ -21,6 +21,7 @@
             </Style.Triggers>
         </Style>
         <Style TargetType="Border" x:Key="BorderAutorization">
+            
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Opacity" Value="0.8"/>

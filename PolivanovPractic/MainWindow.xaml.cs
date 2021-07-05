@@ -23,9 +23,17 @@ namespace PolivanovPractic
         public MainWindow()
         {
             InitializeComponent();
-            ClassF.ClDataBase.mAD = new DataBaseF.MAD_RecipesExamEntities();
-            ClassF.FrameClass.frmMain = FrmMain;
-            ClassF.FrameClass.frmMain.Navigate(new PageF.OnePage());
+
+            try
+            {
+                ClassF.ClDataBase.mAD = new DataBaseF.MAD_RecipesExamEntities();
+                ClassF.FrameClass.frmMain = FrmMain;
+                ClassF.FrameClass.frmMain.Navigate(new PageF.OnePage());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }

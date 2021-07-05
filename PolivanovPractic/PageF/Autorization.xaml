@@ -102,6 +102,7 @@
                     CornerRadius="25"
                     Margin="0 19 0 0"
                     Width="356"
+                    
                     Height="48">
                     <TextBlock
                         VerticalAlignment="Center"

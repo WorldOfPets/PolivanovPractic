@@ -46,10 +46,10 @@
                 FontWeight="Bold"
                 Foreground="#683529"
                 Text="Today"/>
-            <Grid>
+            <Grid
+                Cursor="Hand"
+                Mouse.MouseDown="Image_MouseDown">
                 <Image 
-                    Mouse.MouseDown="Image_MouseDown"
-                    Cursor="Hand"
                     Width="361"
                     Source="/ResF/imgToday.png"/>
                 <TextBlock
@@ -66,10 +66,10 @@
                 FontWeight="Bold"
                 Foreground="#683529"
                 Text="Yesterday"/>
-            <Grid>
+            <Grid
+                Mouse.MouseDown="Image_MouseDown_1"
+                Cursor="Hand">
                 <Image 
-                    Mouse.MouseDown="Image_MouseDown_1"
-                    Cursor="Hand"
                     Width="361"
                     Source="/ResF/imgYearstaday.png"/>
                 <TextBlock
@@ -86,10 +86,11 @@
                 FontWeight="Bold"
                 Foreground="#683529"
                 Text="27.05.2020"/>
-            <Grid>
+            <Grid
+                Mouse.MouseDown="Image_MouseDown_2"
+                Cursor="Hand">
                 <Image 
-                    Mouse.MouseDown="Image_MouseDown_2"
-                    Cursor="Hand"
+                    
                     Width="361"
                     Source="/ResF/img27.png"/>
                 <TextBlock

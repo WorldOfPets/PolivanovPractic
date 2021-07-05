@@ -61,5 +61,17 @@ namespace PolivanovPractic.PageF
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
+        private void Border_MouseDown_2(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                ClassF.FrameClass.frmMain.Navigate(new NotesPage());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
     }
 }

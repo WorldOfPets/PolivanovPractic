@@ -92,6 +92,7 @@
                     Text="Shops"/>
             </Border>
             <Border
+                Mouse.MouseDown="Border_MouseDown_2"
                 Cursor="Hand"
                 Margin="0 17 0 0"
                 CornerRadius="25"

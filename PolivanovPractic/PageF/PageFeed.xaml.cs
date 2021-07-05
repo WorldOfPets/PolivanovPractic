@@ -31,10 +31,20 @@ namespace PolivanovPractic.PageF
                 var art = ClassF.ClDataBase.mAD.Articles.FirstOrDefault(x => x.ID == idArticle);
                 TbName.Text = art.Name;
                 TbText.Text = art.Text;
+                borderVverx();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public async void borderVverx() 
+        {
+            for (int i = -55; i <= 0; i++)
+            { 
+                await Task.Delay(1);
+                BrMain.Margin = new Thickness(0, 0, 0, i*8);
             }
         }
 
