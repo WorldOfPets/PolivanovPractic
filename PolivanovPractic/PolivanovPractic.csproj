@@ -286,6 +286,7 @@
       <DependentUpon>PracticBD.edmx</DependentUpon>
       <LastGenOutput>PracticBD.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResF\logout.png" />
     <Resource Include="ResF\imgBack.png" />
     <Resource Include="ResF\imgFeed.png" />
     <Resource Include="ResF\grayLupa.png" />

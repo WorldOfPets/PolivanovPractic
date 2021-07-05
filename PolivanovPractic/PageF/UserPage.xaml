@@ -10,6 +10,21 @@
       Title="UserPage">
 
     <Grid>
+        <Border
+            Cursor="Hand"
+            Mouse.MouseDown="Border_MouseDown_1"
+            Margin="0 22 27 0"
+            Background="#EFD599"
+            Height="48"
+            Width="48"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            CornerRadius="300">
+            <Image
+                Margin="0 0 1 0"
+                Width="26"
+                Source="/ResF/logout.png"/>
+        </Border>
         <StackPanel>
             <TextBlock
                 Margin="28 32 0 0"

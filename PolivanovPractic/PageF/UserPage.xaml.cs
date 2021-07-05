@@ -35,5 +35,10 @@ namespace PolivanovPractic.PageF
         {
             ClassF.FrameClass.frmUser.Navigate(new MyArticles(IDUSR));
         }
+
+        private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            ClassF.FrameClass.frmMain.Navigate(new Autorization());
+        }
     }
 }
