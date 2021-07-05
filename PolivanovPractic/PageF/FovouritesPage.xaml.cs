@@ -23,7 +23,14 @@ namespace PolivanovPractic.PageF
         public FovouritesPage(int idUSe)
         {
             InitializeComponent();
-            FavData.ItemsSource = ClassF.ClDataBase.mAD.Favorites.Where(x => x.UserID == idUSe).ToList();
+            try
+            {
+                FavData.ItemsSource = ClassF.ClDataBase.mAD.Favorites.Where(x => x.UserID == idUSe).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

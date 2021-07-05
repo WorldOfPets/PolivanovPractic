@@ -27,17 +27,38 @@ namespace PolivanovPractic.PageF
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmUser.Navigate(new PageFeed(1, "Nov"));
+            try
+            {
+                ClassF.FrameClass.frmUser.Navigate(new PageFeed(1, "Nov"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmUser.Navigate(new PageFeed(2, "Nov"));
+            try
+            {
+                ClassF.FrameClass.frmUser.Navigate(new PageFeed(2, "Nov"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Image_MouseDown_2(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmUser.Navigate(new PageFeed(3, "Nov"));
+            try
+            {
+                ClassF.FrameClass.frmUser.Navigate(new PageFeed(3, "Nov"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

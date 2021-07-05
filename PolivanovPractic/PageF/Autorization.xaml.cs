@@ -27,30 +27,51 @@ namespace PolivanovPractic.PageF
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmMain.Navigate(new Registration());
+            try
+            {
+                ClassF.FrameClass.frmMain.Navigate(new Registration());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            if (TbEmail.Text != "" && TbPass.Text != "")
+            try
             {
-                var user = ClassF.ClDataBase.mAD.Users.FirstOrDefault(x => x.Email == TbEmail.Text && x.Password == TbPass.Text);
-                if (user != null)
+                if (TbEmail.Text != "" && TbPass.Text != "")
                 {
-                    ClassF.FrameClass.frmMain.Navigate(new MainPage(user.ID));
+                    var user = ClassF.ClDataBase.mAD.Users.FirstOrDefault(x => x.Email == TbEmail.Text && x.Password == TbPass.Text);
+                    if (user != null)
+                    {
+                        ClassF.FrameClass.frmMain.Navigate(new MainPage(user.ID));
+                    }
+                    else { MessageBox.Show("Пользовтель не найден!"); }
                 }
-                else { MessageBox.Show("Пользовтель не найден!"); }
+                else { MessageBox.Show("Пустые поля!"); }
             }
-            else { MessageBox.Show("Пустые поля!"); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void TbEmail_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var tbox = (TextBox)sender;
-            if (tbox.Text == "Account" || tbox.Text == "Password")
+            try
             {
-                tbox.Text = "";
-                tbox.Foreground = Brushes.Black;
+                var tbox = (TextBox)sender;
+                if (tbox.Text == "Account" || tbox.Text == "Password")
+                {
+                    tbox.Text = "";
+                    tbox.Foreground = Brushes.Black;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 

@@ -25,21 +25,35 @@ namespace PolivanovPractic.PageF
         {
             InitializeComponent();
 
-            pathPage = path;
-            var art = ClassF.ClDataBase.mAD.Articles.FirstOrDefault(x => x.ID == idArticle);
-            TbName.Text = art.Name;
-            TbText.Text = art.Text;
+            try
+            {
+                pathPage = path;
+                var art = ClassF.ClDataBase.mAD.Articles.FirstOrDefault(x => x.ID == idArticle);
+                TbName.Text = art.Name;
+                TbText.Text = art.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (pathPage == "MyArticles")
+            try
             {
-                ClassF.FrameClass.frmUser.Navigate(new MyArticles(UserPage.IDUSR));
+                if (pathPage == "MyArticles")
+                {
+                    ClassF.FrameClass.frmUser.Navigate(new MyArticles(UserPage.IDUSR));
+                }
+                if (pathPage == "Nov")
+                {
+                    ClassF.FrameClass.frmUser.Navigate(new NovostiPage());
+                }
             }
-            if (pathPage == "Nov")
+            catch (Exception ex)
             {
-                ClassF.FrameClass.frmUser.Navigate(new NovostiPage());
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -25,20 +25,41 @@ namespace PolivanovPractic.PageF
         {
             InitializeComponent();
 
-            IDUSR = iduser;
-            var userInSys = ClassF.ClDataBase.mAD.Users.FirstOrDefault(x => x.ID == iduser);
-            TbEmail.Text = userInSys.Email;
-            TbName.Text = userInSys.Name;
+            try
+            {
+                IDUSR = iduser;
+                var userInSys = ClassF.ClDataBase.mAD.Users.FirstOrDefault(x => x.ID == iduser);
+                TbEmail.Text = userInSys.Email;
+                TbName.Text = userInSys.Name;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmUser.Navigate(new MyArticles(IDUSR));
+            try
+            {
+                ClassF.FrameClass.frmUser.Navigate(new MyArticles(IDUSR));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmMain.Navigate(new Autorization());
+            try
+            {
+                ClassF.FrameClass.frmMain.Navigate(new Autorization());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }

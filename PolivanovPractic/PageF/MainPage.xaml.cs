@@ -25,53 +25,67 @@ namespace PolivanovPractic.PageF
         {
             InitializeComponent();
 
-            idUS = IDUSER;
-            ClassF.FrameClass.frmUser = FrmUserLog;
-            ClassF.FrameClass.frmUser.Navigate(new UserPage(IDUSER));
-            BrPeople.Visibility = Visibility.Visible;
+            try
+            {
+                idUS = IDUSER;
+                ClassF.FrameClass.frmUser = FrmUserLog;
+                ClassF.FrameClass.frmUser.Navigate(new UserPage(IDUSER));
+                BrPeople.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var img = (Border)sender;
-            if (img.Name == BtnHeart.Name)
+            try
             {
-                BrHeart.Visibility = Visibility.Visible;
-                ClassF.FrameClass.frmUser.Navigate(new FovouritesPage(idUS));
+                var img = (Border)sender;
+                if (img.Name == BtnHeart.Name)
+                {
+                    BrHeart.Visibility = Visibility.Visible;
+                    ClassF.FrameClass.frmUser.Navigate(new FovouritesPage(idUS));
+                }
+                else
+                {
+                    BrHeart.Visibility = Visibility.Collapsed;
+                }
+                //----------------------------------------
+                if (img.Name == BtnLupa.Name)
+                {
+                    BrLupa.Visibility = Visibility.Visible;
+                    ClassF.FrameClass.frmUser.Navigate(new Recipes());
+                }
+                else
+                {
+                    BrLupa.Visibility = Visibility.Collapsed;
+                }
+                //----------------------------------------
+                if (img.Name == BtnNew.Name)
+                {
+                    BrNew.Visibility = Visibility.Visible;
+                    ClassF.FrameClass.frmUser.Navigate(new NovostiPage());
+                }
+                else
+                {
+                    BrNew.Visibility = Visibility.Collapsed;
+                }
+                //----------------------------------------
+                if (img.Name == BtnPeople.Name)
+                {
+                    BrPeople.Visibility = Visibility.Visible;
+                    ClassF.FrameClass.frmUser.Navigate(new UserPage(idUS));
+                }
+                else
+                {
+                    BrPeople.Visibility = Visibility.Collapsed;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                BrHeart.Visibility = Visibility.Collapsed;
-            }
-            //----------------------------------------
-            if (img.Name == BtnLupa.Name)
-            {
-                BrLupa.Visibility = Visibility.Visible;
-                ClassF.FrameClass.frmUser.Navigate(new Recipes());
-            }
-            else
-            {
-                BrLupa.Visibility = Visibility.Collapsed;
-            }
-            //----------------------------------------
-            if (img.Name == BtnNew.Name)
-            {
-                BrNew.Visibility = Visibility.Visible;
-                ClassF.FrameClass.frmUser.Navigate(new NovostiPage());
-            }
-            else
-            {
-                BrNew.Visibility = Visibility.Collapsed;
-            }
-            //----------------------------------------
-            if (img.Name == BtnPeople.Name)
-            {
-                BrPeople.Visibility = Visibility.Visible;
-                ClassF.FrameClass.frmUser.Navigate(new UserPage(idUS));
-            }
-            else
-            {
-                BrPeople.Visibility = Visibility.Collapsed;
+                MessageBox.Show(ex.Message);
             }
         }
     }

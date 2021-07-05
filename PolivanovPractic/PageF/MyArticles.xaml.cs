@@ -23,14 +23,29 @@ namespace PolivanovPractic.PageF
         public MyArticles(int UserID)
         {
             InitializeComponent();
-            FavData.ItemsSource = ClassF.ClDataBase.mAD.Articles.Where(x => x.UserID == UserID).ToList();
+
+            try
+            {
+                FavData.ItemsSource = ClassF.ClDataBase.mAD.Articles.Where(x => x.UserID == UserID).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DataGridRow_Selected(object sender, RoutedEventArgs e)
         {
-            var row = (DataGridRow)sender;
-            var contex = row.DataContext as DataBaseF.Articles;
-            ClassF.FrameClass.frmUser.Navigate(new PageFeed(contex.ID, "MyArticles"));
+            try
+            {
+                var row = (DataGridRow)sender;
+                var contex = row.DataContext as DataBaseF.Articles;
+                ClassF.FrameClass.frmUser.Navigate(new PageFeed(contex.ID, "MyArticles"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

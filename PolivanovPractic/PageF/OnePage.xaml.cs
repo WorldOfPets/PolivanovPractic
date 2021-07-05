@@ -27,12 +27,26 @@ namespace PolivanovPractic.PageF
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClassF.FrameClass.frmMain.Navigate(new TwoPage());
+            try
+            {
+                ClassF.FrameClass.frmMain.Navigate(new TwoPage());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Application.Current.Shutdown();
+            try
+            {
+                Application.Current.Shutdown();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
